@@ -6,12 +6,12 @@ import { LibraryServices } from './components/LibraryServices'
 import { Carousel } from './components/Carousel'
 
 export const HomaPage = () => {
-    return (
-        <>
-        <ExploreTopBooks />
+  return (
+    <>
+      <ExploreTopBooks />
       <Carousel />
       <Heroes />
       <LibraryServices />
-        </>
+    </>
   )
 }

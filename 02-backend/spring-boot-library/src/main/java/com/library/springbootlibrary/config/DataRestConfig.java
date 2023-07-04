@@ -13,6 +13,7 @@ public class DataRestConfig implements RepositoryRestConfigurer {
     private final String allowedOrigin="http://localhost:3000";
 
 
+
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors){
 

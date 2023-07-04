@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { ReturnBook } from '../components/ReturnBook'
 import BookModel from '../../../models/BookModel'
+import { SpinnerLoading } from '../../utils/SpinnerLoading'
 
 export const Carousel = () => {
     const [books, setbooks] = useState<BookModel[]>([]);
@@ -49,12 +50,9 @@ export const Carousel = () => {
 
     if (isLoading) {
         return (
-            <div className='container m-5'>
-                <p>Loading....</p>
-            </div>
+                <SpinnerLoading/>
         )
     }
-
     if (httpError) {
         return (
             <div className='container m-5'>

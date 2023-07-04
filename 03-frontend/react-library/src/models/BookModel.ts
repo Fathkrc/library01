@@ -1,4 +1,4 @@
-class BookModel{
+class BookModel {
     id: number;
     title: string;
     author?: string;
@@ -24,7 +24,6 @@ class BookModel{
         this.copiesAvailable = copiesAvailable;
         this.category = category;
         this.img = img;
-        }
-
+    }
 }
 export default BookModel;
