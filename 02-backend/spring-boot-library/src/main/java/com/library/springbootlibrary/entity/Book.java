@@ -76,11 +76,11 @@ public class Book {
         this.copies = copies;
     }
 
-    public int getcopiesAvailable() {
+    public int getCopiesAvailable() {
         return copiesAvailable;
     }
 
-    public void setCopiesAvaible(int copiesAvailable) {
+    public void setCopiesAvailable(int copiesAvailable) {
         this.copiesAvailable = copiesAvailable;
     }
 

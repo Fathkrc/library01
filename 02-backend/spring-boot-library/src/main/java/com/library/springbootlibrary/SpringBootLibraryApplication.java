@@ -9,8 +9,8 @@ public class SpringBootLibraryApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootLibraryApplication.class, args);
-		Author a=new Author(12,"dasd",123);
-		System.out.println(a.getId());
+//		Author a=new Author(12,"dasd",123);
+//		System.out.println(a.getId());
 	}
 
 }
