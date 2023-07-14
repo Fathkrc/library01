@@ -1,7 +1,11 @@
+import { useOktaAuth } from '@okta/okta-react'
 import React from 'react'
 import { Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 export const Heroes = () => {
+
+    const { authState } = useOktaAuth();
     return (
         <div>
             <div className='d-none d-lg-block'>
@@ -18,7 +22,12 @@ export const Heroes = () => {
                                 The library team would love to know what you have been reading.
                                 Whether it is to learn a new skill or grow within one,
                                 we will be able to provide the top content for you</p>
-                            <a href="#" className='btn main-color btn-lg text-white'>Sign up</a>
+                            {authState?.isAuthenticated ?
+                            <Link type='button' className='btn main-color btn-outline-info text-white' to='search'>Explore top Books</Link>
+                            :
+                            <Link to="/login" className='btn main-color btn-outline-info text-white'>Sign up</Link>
+                            }
+                           
                         </div>
                     </Container>
                 </div>
@@ -32,6 +41,12 @@ export const Heroes = () => {
                                 Try to check in daily as our collection is always changing.
                                 We work nonstop to provide the most accurate book selection possible .
                             </p>
+                            {authState?.isAuthenticated ?
+                                <Link type='button' className='btn main-color btn-outline-info text-white' to='search'>
+                                    Explore Top Books</Link>
+                                :
+                                <Link type='button' className='btn main-color btn-outline-info text-white' to='/login'>
+                                Sing up</Link>}
                         </div>
 
                     </Container>

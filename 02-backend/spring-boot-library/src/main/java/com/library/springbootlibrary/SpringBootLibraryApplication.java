@@ -1,6 +1,6 @@
 package com.library.springbootlibrary;
 
-import com.library.springbootlibrary.entity.Author;
+import com.library.springbootlibrary.entity.Review;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,8 +9,11 @@ public class SpringBootLibraryApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootLibraryApplication.class, args);
-//		Author a=new Author(12,"dasd",123);
-//		System.out.println(a.getId());
+		Review r=new Review();
+
+
+
+
 	}
 
 }

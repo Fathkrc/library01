@@ -1,6 +1,7 @@
 package com.library.springbootlibrary.config;
 
 import com.library.springbootlibrary.entity.Book;
+import com.library.springbootlibrary.entity.Review;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -22,12 +23,22 @@ public class DataRestConfig implements RepositoryRestConfigurer {
                 HttpMethod.DELETE,
                 HttpMethod.PUT,
                 HttpMethod.PATCH};
-        config.
+        // We are doing able to be reached our ids from front end
+                config.
                 exposeIdsFor(Book.class);
+                config.
+                exposeIdsFor(Review.class);
+
+        // Restricting access to Http methods other than get mothods with our custom method
+        // BOOK.CLASS
         disableHttpMethods(Book.class,
                 config,
                 theUnsportedActions);
-//        Configure CORS Mapping
+        // REVIEW.CLASS
+        disableHttpMethods(Review.class,
+                config,
+                theUnsportedActions);
+        // Configure CORS Mapping
         cors.addMapping(config.getBasePath()+"/**")
                 .allowedOrigins(allowedOrigin);
 
