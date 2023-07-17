@@ -36,10 +36,10 @@ public class BookService {
         bookRepository.save(book.get());
         Checkout checkout=new Checkout(userEmail,LocalDate.now().toString(),LocalDate.now().plusDays(7).toString(),
                 book.get().getId() );
-//        checkout.setCheckoutDate(LocalDate.now().toString());
-//        checkout.setUserEmail(userEmail);
-//        checkout.setBookId(book.get().getId());
-//        checkout.setReturnDate(LocalDate.now().plusDays(7).toString());
+        checkout.setCheckoutDate(LocalDate.now().toString());
+        checkout.setUserEmail(userEmail);
+        checkout.setBookId(book.get().getId());
+        checkout.setReturnDate(LocalDate.now().plusDays(7).toString());
 
         checkoutRepository.save(checkout);
         return book.get();

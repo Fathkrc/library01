@@ -5,5 +5,4 @@ export const oktaconfig = {
     scopes: ['openid', 'profile', 'email'],
     pkce: true,
     disableHttpsCheck: true,
-
 }      

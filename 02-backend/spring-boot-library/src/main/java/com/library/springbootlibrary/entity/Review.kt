@@ -1,7 +1,8 @@
 package com.library.springbootlibrary.entity
 
-import jakarta.persistence.*
+
 import java.util.*
+import javax.persistence.*
 
 @Entity
 @Table(name = "review")
@@ -24,7 +25,7 @@ class Review {
     var bookId: Long? = 0
 
     @Column(name = "review_description")
-    var reviewDescription: String? =""
+    var reviewDescription: String?= ""
 
     constructor( userEmail: String?, date: Date?, rating: Double, bookId: Long, reviewDescription: String?) {
         this.userEmail = userEmail

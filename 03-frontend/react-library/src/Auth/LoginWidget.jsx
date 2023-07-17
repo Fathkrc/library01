@@ -18,7 +18,7 @@ const LoginWidget = ({ config }) => {
             <SpinnerLoading/>
         );
     }
-
+// 6.1.3 7.1.2 
     return authState.isAuthenticated ?
     <Redirect to={{ pathname: '/' }}/>
     :

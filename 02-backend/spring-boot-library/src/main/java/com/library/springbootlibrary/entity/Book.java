@@ -1,6 +1,6 @@
 package com.library.springbootlibrary.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Book")
@@ -10,6 +10,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "title")
     private String title;
 
     private String author;
@@ -25,7 +26,6 @@ public class Book {
     private String img;
 
     public Book() {
-
     }
 
     public Book(Long id, String title, String author, String description, int copies, int copiesAvailable, String category, String img) {
