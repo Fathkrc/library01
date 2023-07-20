@@ -28,4 +28,4 @@ const OktaSignInWidget = ({ onSuccess, onError }) => {
     );
 };
 
-export default OktaSignInWidget
+export default OktaSignInWidget;

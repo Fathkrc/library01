@@ -29,7 +29,8 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests(auth->
                 auth
                         .antMatchers("/api/books/secure/**",
-                                "/api/reviews/secure/**" )
+                                "/api/reviews/secure/**" ,
+                                "api/messages/secure/**")
                         .authenticated())
                 .oauth2ResourceServer()
                 .jwt();

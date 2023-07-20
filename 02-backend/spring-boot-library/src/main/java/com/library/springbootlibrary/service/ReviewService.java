@@ -28,7 +28,8 @@ public class ReviewService {
         Review review=new Review();
         review.setUserEmail(userEmail);
         review.setReviewDescription(reviewRequest.getReviewDescription());
-        review.setRating(review.getRating());
+        review.setRating(reviewRequest.getRating());
+        review.setBookId(reviewRequest.getBookId());
         // null state is already handled
 //        if(!reviewRequest.getReviewDescription().isBlank()){ }
         review.setDate(Date.valueOf(LocalDate.now()));

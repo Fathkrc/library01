@@ -8,7 +8,7 @@ import javax.persistence.*
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id")
-        private val id:Long =0,
+        var id:Long =0,
         @Column(name = "user_email")
         var userEmail:String?="",
         @Column(name = "checkout_date")
@@ -18,10 +18,10 @@ import javax.persistence.*
         @Column(name = "book_id")
         var bookId:Long?=0
 ){
+
        constructor(userEmail: String, checkoutDate: String, returnDate: String, bookId: Long) : this(
 
-       ) {
-       }
+       )
 
 
 }

@@ -1,9 +1,12 @@
 package com.library.springbootlibrary.controller;
 
 import com.library.springbootlibrary.entity.Book;
+import com.library.springbootlibrary.responsemodels.ShelfCurrentLoansResponse;
 import com.library.springbootlibrary.service.BookService;
 import com.library.springbootlibrary.utils.ExtractJwt;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @CrossOrigin("http://localhost:3000")
@@ -15,6 +18,13 @@ public class BookController {
 
     public BookController(BookService bookService) {
         this.bookService = bookService;
+    }
+
+    @GetMapping("/secure/currentloans")
+    public List<ShelfCurrentLoansResponse> currentLoans(@RequestHeader(value = "Authorization") String token)
+            throws Exception {
+        String userEmail= ExtractJwt.payloadJwtExtraction(token,"\"sub\"");
+        return bookService.currentLoans(userEmail);
     }
 
     @PutMapping("/secure/checkout")
@@ -37,5 +47,20 @@ public class BookController {
     public int currentLoansCount(@RequestHeader(value = "Authorization") String token){
         String userEmail= ExtractJwt.payloadJwtExtraction(token,"\"sub\"");
       return  bookService.currentLoansCount(userEmail);
+    }
+
+    @PutMapping("/secure/return")
+    public void returnBook(@RequestHeader(value = "Authorization") String token,
+                           @RequestParam Long bookId) throws Exception{
+        String userEmail= ExtractJwt.payloadJwtExtraction(token,"\"sub\"");
+        bookService.returnBook(userEmail,bookId);
+    }
+
+    @PutMapping("/secure/renew/loan")
+    public void renewLoan(@RequestHeader(value = "Authorization") String token,
+                          @RequestParam Long bookId) throws Exception{
+        String userEmail= ExtractJwt.payloadJwtExtraction(token,"\"sub\"");
+        bookService.renewLoan(userEmail,bookId);
+
     }
 }
