@@ -21,7 +21,7 @@ export const SearchBooksPage = () => {
 
     useEffect(() => {
         const fetchBook = async () => {
-            const baseUrl: string = "http://localhost:8080/api/books"
+            const baseUrl: string = `${process.env.REACT_APP_API}/books`;
 
             let url: string = ``;
             if (searchUrl === '') {
@@ -89,7 +89,7 @@ export const SearchBooksPage = () => {
             setSearchUrl('');
         }
         else {
-            setSearchUrl(`/search/findByTitleContaining?title=${search}&page=<pageNumber>&size=${booksPerPage}`);
+            setSearchUrl(`${process.env.REACT_APP_API}/search/findByTitleContaining?title=${search}&page=<pageNumber>&size=${booksPerPage}`);
         }
         setCategory('Book category');
     }

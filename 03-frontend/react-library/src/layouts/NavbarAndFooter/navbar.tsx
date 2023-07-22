@@ -3,6 +3,7 @@ import { Button, Navbar } from 'react-bootstrap'
 import { Link, NavLink } from 'react-router-dom';
 import { useOktaAuth } from '@okta/okta-react';
 import { SpinnerLoading } from '../utils/SpinnerLoading';
+import { authenticate } from '@okta/okta-auth-js';
 
 const MyNavbar = () => {
 
@@ -44,6 +45,10 @@ const MyNavbar = () => {
                                     Shelf
                                 </NavLink>
                         </li>
+                        }
+                        {
+                            authState.isAuthenticated && authState?.accessToken?.claims?.userType === 'admin' &&
+                            <NavLink className='nav-link' to='/admin'>Admin</NavLink>
                         }
                     </ul>
                     <ul className='navbar-nav ms-auto'>

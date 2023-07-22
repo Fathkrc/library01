@@ -55,7 +55,7 @@ export const LoansModal: React.FC<{
                                         Due in {props.shelfCurrentLoan.daysLeft} days.
                                     </p>
                                 }
-                                {props.shelfCurrentLoan.daysLeft == 0 &&
+                                {props.shelfCurrentLoan.daysLeft === 0 &&
                                     <p className='text-success'>
                                         Due Today
                                     </p>

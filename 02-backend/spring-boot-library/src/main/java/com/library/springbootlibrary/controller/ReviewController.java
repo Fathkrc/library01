@@ -6,7 +6,7 @@ import com.library.springbootlibrary.service.ReviewService;
 import com.library.springbootlibrary.utils.ExtractJwt;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("https://localhost:3000")
 @RestController
 @RequestMapping("/api/reviews")
 public class ReviewController {

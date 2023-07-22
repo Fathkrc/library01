@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Container } from 'react-bootstrap';
+import { Messages } from './component/Messages';
 import { PostNewMessage } from './component/PostNewMessage';
 
 export const MessagesPage = () => {
@@ -52,7 +53,7 @@ export const MessagesPage = () => {
                         aria-labelledby='nav-message-tab'
                     >
                         {messagesClick ?
-                            <p>Messages</p>
+                            <Messages/>
                             :
                             <>
                             </>
