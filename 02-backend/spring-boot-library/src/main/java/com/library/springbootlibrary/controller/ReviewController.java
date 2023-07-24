@@ -1,6 +1,5 @@
 package com.library.springbootlibrary.controller;
 
-import com.library.springbootlibrary.entity.Review;
 import com.library.springbootlibrary.requestmodels.ReviewRequest;
 import com.library.springbootlibrary.service.ReviewService;
 import com.library.springbootlibrary.utils.ExtractJwt;

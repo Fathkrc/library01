@@ -132,7 +132,7 @@ export const Loans = () => {
                                                         Due in {shelfCurrentLoan.daysLeft} days.
                                                     </p>
                                                 }
-                                                {shelfCurrentLoan.daysLeft == 0 &&
+                                                {shelfCurrentLoan.daysLeft === 0 &&
                                                     <p className='text-success'>
                                                         Due Today
                                                     </p>
@@ -216,7 +216,7 @@ export const Loans = () => {
                                                         Due in {shelfCurrentLoan.daysLeft} days.
                                                     </p>
                                                 }
-                                                {shelfCurrentLoan.daysLeft == 0 &&
+                                                {shelfCurrentLoan.daysLeft === 0 &&
                                                     <p className='text-success'>
                                                         Due Today
                                                     </p>

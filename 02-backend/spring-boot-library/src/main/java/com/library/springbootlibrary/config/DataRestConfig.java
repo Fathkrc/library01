@@ -2,6 +2,7 @@ package com.library.springbootlibrary.config;
 
 import com.library.springbootlibrary.entity.Book;
 import com.library.springbootlibrary.entity.Message;
+import com.library.springbootlibrary.entity.Payment;
 import com.library.springbootlibrary.entity.Review;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -30,7 +31,9 @@ public class DataRestConfig implements RepositoryRestConfigurer {
                 config.
                 exposeIdsFor(Review.class);
                 config
-                        .exposeIdsFor(Message.class);
+                .exposeIdsFor(Message.class);
+        config
+                .exposeIdsFor(Payment.class);
 
         // Restricting access to Http methods other than get mothods with our custom method
         // BOOK.CLASS
@@ -43,6 +46,10 @@ public class DataRestConfig implements RepositoryRestConfigurer {
                 theUnsportedActions);
         // MESSAGE.CLASS
         disableHttpMethods(Message.class,
+                config,
+                theUnsportedActions);
+        //Payment.class
+        disableHttpMethods(Payment.class,
                 config,
                 theUnsportedActions);
         // Configure CORS Mapping
