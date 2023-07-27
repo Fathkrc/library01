@@ -50,6 +50,10 @@ const MyNavbar = () => {
                             authState.isAuthenticated && authState?.accessToken?.claims?.userType === 'admin' &&
                             <NavLink className='nav-link' to='/admin'>Admin</NavLink>
                         }
+                           {
+                            authState.isAuthenticated  &&
+                            <NavLink className='nav-link' to='/fees'>Pay Fees</NavLink>
+                        }
                     </ul>
                     <ul className='navbar-nav ms-auto'>
 

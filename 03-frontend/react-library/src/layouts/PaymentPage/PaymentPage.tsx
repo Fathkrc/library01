@@ -92,7 +92,7 @@ const PaymentPage = () => {
                 if (!stripeResponse.ok) {
                     setHttpError(true);
                     setSubmitDisabled(false);
-                    throw new Error('same shit again');
+                    throw new Error('gammaklar yandi');
                 }
                 setFees(0);
                 setSubmitDisabled(false);
