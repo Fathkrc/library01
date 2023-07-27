@@ -28,8 +28,8 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
-!**/src/reources/**
-!**/src/config/**
-
+/src/reources/**
+/src/config/**
+/Users/fatihkaraca/Desktop/Library_FS/02-backend/spring-boot-library/src/main/resources/luv2code-keystore.p12
 ### VS Code ###
 .vscode/
